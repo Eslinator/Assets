@@ -1,0 +1,27 @@
+{
+  "type": "asset_spec",
+  "version": "1.0.0",
+  "asset_id": "bench_a01",
+  "purpose": "sideline bench (prop)",
+  "hero_tier": "mid",
+  "target_engine": ["Roblox","Unreal"],
+  "budgets": {
+    "tris_max": 1800,
+    "textures": [
+      {"map":"ORM","size_px":512},
+      {"map":"Normal","size_px":512},
+      {"map":"BaseColor","size_px":512}
+    ]
+  },
+  "lod_plan": [{"name":"HIGH"},{"name":"MED"},{"name":"LOW"}],
+  "constraints": [
+    {"rule_ref":"OPT:ROBLOX:MESHPART_TRIS_MAX","severity":"blocker"},
+    {"rule_ref":"EXPORT:AXIS:NEG_Z_FWD_Y_UP","severity":"blocker"},
+    {"rule_ref":"LOD:PRESENT_HIGH_MED_LOW","severity":"blocker"}
+  ],
+  "scale_units": {"m_per_unit":1.0,"roblox_stud_per_m":3.571},
+  "sources": [
+    {"url":"/mnt/data/unknown-unknowns-2025.md","title":"Unknown Unknowns 2025"},
+    {"url":"/mnt/data/paas-validation-principles.md","title":"PaaS Validation Principles"}
+  ]
+}
