@@ -1,0 +1,39 @@
+name: KB CI
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  validate-and-import:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: |
+          python -m venv .venv
+          . .venv/bin/activate
+          pip install -r tools/requirements.txt
+
+      - name: Validate & import bundle
+        run: |
+          . .venv/bin/activate
+          python tools/kb_import.py kb/bundles/kb_bundle_v1.json
+          test -f kb/index/manifest.json
+          test -f kb/index/by_engine/roblox.json
+          test -f kb/index/by_category/export.json
+
+      - name: Sanity counts
+        run: |
+          sudo apt-get update && sudo apt-get install -y jq
+          jq '{rules:(.rules|length),procedures:(.procedures|length),checklists:(.checklists|length)}' kb/index/manifest.json
