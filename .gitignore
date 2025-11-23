@@ -1,0 +1,14 @@
+# OS
+.DS_Store
+._*
+
+# Python
+.venv/
+__pycache__/
+
+# Editors/Preview temp
+~$*
+*.swp
+
+# Logs
+*.log
