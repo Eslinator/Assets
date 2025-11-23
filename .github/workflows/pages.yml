@@ -1,4 +1,5 @@
 name: Publish KB (Pages)
+
 on:
   push:
     branches: [ main ]
@@ -6,25 +7,30 @@ on:
       - 'kb/index/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
 concurrency:
   group: "pages"
   cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Package kb index
+      - uses: actions/configure-pages@v5
+      - name: Package kb index to _site
         run: |
           mkdir -p _site
           cp -R kb/index/* _site/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
