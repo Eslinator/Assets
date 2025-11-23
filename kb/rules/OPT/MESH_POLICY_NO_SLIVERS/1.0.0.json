@@ -1,0 +1,14 @@
+{
+  "rule_ref": "OPT:MESH_POLICY_NO_SLIVERS",
+  "category": "performance",
+  "statement": "Avoid separate tiny sliver geometry; limit separate mesh pieces to reduce draw calls.",
+  "units": "policy",
+  "severity": "advice",
+  "sources": [
+    {
+      "url": "https://create.roblox.com/docs",
+      "title": "Roblox DevHub"
+    }
+  ],
+  "version": "1.0.0"
+}

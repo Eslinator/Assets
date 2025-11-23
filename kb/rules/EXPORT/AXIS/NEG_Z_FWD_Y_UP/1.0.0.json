@@ -1,0 +1,18 @@
+{
+  "rule_ref": "EXPORT:AXIS:NEG_Z_FWD_Y_UP",
+  "category": "export",
+  "statement": "Export with -Z forward and Y up.",
+  "units": "axes",
+  "severity": "blocker",
+  "sources": [
+    {
+      "url": "https://create.roblox.com/docs",
+      "title": "Roblox DevHub"
+    },
+    {
+      "url": "/mnt/data/paas-validation-principles.md",
+      "title": "PaaS Validation Principles"
+    }
+  ],
+  "version": "1.0.0"
+}

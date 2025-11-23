@@ -1,0 +1,18 @@
+{
+  "rule_ref": "UV:DISTORTION_MAX_3PCT_CRITICAL",
+  "category": "uv",
+  "statement": "UV stretching in critical areas must be < 3%.",
+  "units": "percent",
+  "range": {
+    "min": 0,
+    "max": 3
+  },
+  "severity": "warn",
+  "sources": [
+    {
+      "url": "http://arxiv.org/pdf/2404.13923.pdf",
+      "title": "MaterialSeg3D"
+    }
+  ],
+  "version": "1.0.0"
+}

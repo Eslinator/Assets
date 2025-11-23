@@ -1,0 +1,11 @@
+{
+  "stage": "after_import",
+  "version": "1.0.0",
+  "items": [
+    "Tri count matches plan; shading and tangents correct.",
+    "Scale & units correct (1 unit = 1 m unless engine overrides; Roblox mapping documented).",
+    "LOD switching thresholds verified at screen distances.",
+    "Collision behaves as intended with simple primitives.",
+    "No runtime MeshId swaps on server for Roblox templates."
+  ]
+}

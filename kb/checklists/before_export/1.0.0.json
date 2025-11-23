@@ -1,0 +1,12 @@
+{
+  "stage": "before_export",
+  "version": "1.0.0",
+  "items": [
+    "Tri count ≤ budget; MeshPart ≤ 10,000 tris.",
+    "HIGH/MED/LOW LODs present and linked.",
+    "Transforms applied; scale normalized; pivot/origin correct.",
+    "UVs valid; no unintended overlaps; TD within ±10%; padding ≥ 4 px @1k.",
+    "Materials limited; channel packing (ORM) applied when planned.",
+    "Axis: −Z forward, Y up; naming & hierarchy clean."
+  ]
+}

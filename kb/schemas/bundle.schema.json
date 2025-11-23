@@ -1,0 +1,11 @@
+{
+  "$id": "bundle.schema.json",
+  "type": "object",
+  "required": ["meta","rules","procedures","checklists"],
+  "properties": {
+    "meta": {"type":"object"},
+    "rules": {"type":"array","items":{"$ref":"rule.schema.json"}},
+    "procedures": {"type":"array","items":{"$ref":"procedure.schema.json"}},
+    "checklists": {"type":"array","items":{"$ref":"checklist.schema.json"}}
+  }
+}

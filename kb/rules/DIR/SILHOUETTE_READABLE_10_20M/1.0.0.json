@@ -1,0 +1,18 @@
+{
+  "rule_ref": "DIR:SILHOUETTE_READABLE_10_20M",
+  "category": "performance",
+  "statement": "Primary/secondary/tertiary silhouette must be readable at 10–20 meters.",
+  "units": "meters_visibility",
+  "range": {
+    "min": 10,
+    "max": 20
+  },
+  "severity": "advice",
+  "sources": [
+    {
+      "url": "http://www.ijcaonline.org/archives/volume162/number11/castello-2017-ijca-913400.pdf",
+      "title": "Surface Decimation by Scene Contents"
+    }
+  ],
+  "version": "1.0.0"
+}

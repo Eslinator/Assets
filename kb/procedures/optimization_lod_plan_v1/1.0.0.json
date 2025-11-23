@@ -1,0 +1,24 @@
+{
+  "id": "optimization_lod_plan_v1",
+  "phase": "qa",
+  "steps": [
+    "Define HIGH/MED/LOW meshes; remove tertiary then secondary details per step-down.",
+    "Verify decal removal thresholds and screen-size targets.",
+    "Confirm collision uses simple primitives or engine-native low-poly shapes."
+  ],
+  "metrics": [
+    {
+      "name": "lod_levels",
+      "unit": "count",
+      "target": 3
+    }
+  ],
+  "DoD": "§LOD:PRESENT_HIGH_MED_LOW",
+  "sources": [
+    {
+      "url": "https://create.roblox.com/docs",
+      "title": "Roblox DevHub"
+    }
+  ],
+  "version": "1.0.0"
+}

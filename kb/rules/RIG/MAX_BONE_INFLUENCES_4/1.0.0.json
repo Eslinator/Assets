@@ -1,0 +1,18 @@
+{
+  "rule_ref": "RIG:MAX_BONE_INFLUENCES_4",
+  "category": "rigging",
+  "statement": "Limit bone influences per vertex to ≤ 4 for mobile readiness.",
+  "units": "influences_per_vertex",
+  "range": {
+    "min": 1,
+    "max": 4
+  },
+  "severity": "warn",
+  "sources": [
+    {
+      "url": "https://dl.acm.org/doi/10.1145/3532836.3536252",
+      "title": "Pixar Cloth Tailoring Pipeline"
+    }
+  ],
+  "version": "1.0.0"
+}

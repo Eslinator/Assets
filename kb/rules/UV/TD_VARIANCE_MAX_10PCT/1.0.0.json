@@ -1,0 +1,18 @@
+{
+  "rule_ref": "UV:TD_VARIANCE_MAX_10PCT",
+  "category": "uv",
+  "statement": "Texel density variance across the asset must be within ±10%.",
+  "units": "percent",
+  "range": {
+    "min": 0,
+    "max": 10
+  },
+  "severity": "warn",
+  "sources": [
+    {
+      "url": "http://arxiv.org/pdf/2404.13923.pdf",
+      "title": "MaterialSeg3D"
+    }
+  ],
+  "version": "1.0.0"
+}

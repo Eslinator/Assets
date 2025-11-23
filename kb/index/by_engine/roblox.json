@@ -1,0 +1,92 @@
+[
+  {
+    "rule_ref": "OPT:ROBLOX:MESHPART_TRIS_MAX",
+    "category": "roblox",
+    "statement": "Each MeshPart must have ≤ 10,000 triangles.",
+    "units": "tris",
+    "range": {
+      "min": 0,
+      "max": 10000
+    },
+    "severity": "blocker",
+    "sources": [
+      {
+        "url": "https://create.roblox.com/docs",
+        "title": "Roblox DevHub"
+      },
+      {
+        "url": "/mnt/data/unknown-unknowns-2025.md",
+        "title": "Unknown Unknowns 2025"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "rule_ref": "EXPORT:AXIS:NEG_Z_FWD_Y_UP",
+    "category": "export",
+    "statement": "Export with -Z forward and Y up.",
+    "units": "axes",
+    "severity": "blocker",
+    "sources": [
+      {
+        "url": "https://create.roblox.com/docs",
+        "title": "Roblox DevHub"
+      },
+      {
+        "url": "/mnt/data/paas-validation-principles.md",
+        "title": "PaaS Validation Principles"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "rule_ref": "LOD:PRESENT_HIGH_MED_LOW",
+    "category": "performance",
+    "statement": "Provide at least three LODs: HIGH, MED, LOW; remove tertiary then secondary detail first.",
+    "units": "levels",
+    "range": {
+      "min": 3,
+      "max": 4
+    },
+    "severity": "blocker",
+    "sources": [
+      {
+        "url": "https://create.roblox.com/docs",
+        "title": "Roblox DevHub"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "rule_ref": "OPT:MESH_POLICY_NO_SLIVERS",
+    "category": "performance",
+    "statement": "Avoid separate tiny sliver geometry; limit separate mesh pieces to reduce draw calls.",
+    "units": "policy",
+    "severity": "advice",
+    "sources": [
+      {
+        "url": "https://create.roblox.com/docs",
+        "title": "Roblox DevHub"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "rule_ref": "DIR:SILHOUETTE_READABLE_10_20M",
+    "category": "performance",
+    "statement": "Primary/secondary/tertiary silhouette must be readable at 10–20 meters.",
+    "units": "meters_visibility",
+    "range": {
+      "min": 10,
+      "max": 20
+    },
+    "severity": "advice",
+    "sources": [
+      {
+        "url": "http://www.ijcaonline.org/archives/volume162/number11/castello-2017-ijca-913400.pdf",
+        "title": "Surface Decimation by Scene Contents"
+      }
+    ],
+    "version": "1.0.0"
+  }
+]

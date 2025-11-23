@@ -1,0 +1,24 @@
+{
+  "id": "export_fbx_modern_engines_v1",
+  "phase": "export",
+  "steps": [
+    "Apply transforms; normalize scale; set pivot/origin as planned.",
+    "FBX export: scale 1.0; smoothing/tangents per target engine; include animations only if required.",
+    "Axis check: -Z forward, Y up; verify per-material limits and mesh merging policy."
+  ],
+  "metrics": [
+    {
+      "name": "axis_compliance",
+      "unit": "boolean",
+      "target": 1
+    }
+  ],
+  "DoD": "§EXPORT:AXIS:NEG_Z_FWD_Y_UP",
+  "sources": [
+    {
+      "url": "https://create.roblox.com/docs",
+      "title": "Roblox DevHub"
+    }
+  ],
+  "version": "1.0.0"
+}

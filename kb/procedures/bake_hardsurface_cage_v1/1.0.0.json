@@ -1,0 +1,24 @@
+{
+  "id": "bake_hardsurface_cage_v1",
+  "phase": "bake",
+  "steps": [
+    "Name high/low meshes with clear suffixes for batch bakes.",
+    "Generate an outward cage for tight bevels; avoid projection skew on glancing angles.",
+    "Bake Normal, AO, Curvature; add Thickness where material needs it."
+  ],
+  "metrics": [
+    {
+      "name": "projection_errors",
+      "unit": "count",
+      "target": 0
+    }
+  ],
+  "DoD": "§EXPORT:AXIS:NEG_Z_FWD_Y_UP",
+  "sources": [
+    {
+      "url": "https://www.tandfonline.com/doi/full/10.1080/17453054.2017.1313682",
+      "title": "High poly to low poly workflows"
+    }
+  ],
+  "version": "1.0.0"
+}

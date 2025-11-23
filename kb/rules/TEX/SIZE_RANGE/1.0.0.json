@@ -1,0 +1,18 @@
+{
+  "rule_ref": "TEX:SIZE_RANGE",
+  "category": "material",
+  "statement": "Texture resolutions must be chosen between 256 and 2048 px with justification by on-screen size.",
+  "units": "px",
+  "range": {
+    "min": 256,
+    "max": 2048
+  },
+  "severity": "warn",
+  "sources": [
+    {
+      "url": "https://create.roblox.com/docs",
+      "title": "Roblox DevHub"
+    }
+  ],
+  "version": "1.0.0"
+}

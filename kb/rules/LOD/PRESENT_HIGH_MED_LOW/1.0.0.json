@@ -1,0 +1,18 @@
+{
+  "rule_ref": "LOD:PRESENT_HIGH_MED_LOW",
+  "category": "performance",
+  "statement": "Provide at least three LODs: HIGH, MED, LOW; remove tertiary then secondary detail first.",
+  "units": "levels",
+  "range": {
+    "min": 3,
+    "max": 4
+  },
+  "severity": "blocker",
+  "sources": [
+    {
+      "url": "https://create.roblox.com/docs",
+      "title": "Roblox DevHub"
+    }
+  ],
+  "version": "1.0.0"
+}

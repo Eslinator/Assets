@@ -1,0 +1,41 @@
+{
+  "rules": [
+    "OPT:ROBLOX:MESHPART_TRIS_MAX@1.0.0",
+    "EXPORT:AXIS:NEG_Z_FWD_Y_UP@1.0.0",
+    "LOD:PRESENT_HIGH_MED_LOW@1.0.0",
+    "TEX:SIZE_RANGE@1.0.0",
+    "UV:PADDING_MIN_4PX_AT_1K@1.0.0",
+    "UV:TD_VARIANCE_MAX_10PCT@1.0.0",
+    "UV:DISTORTION_MAX_3PCT_CRITICAL@1.0.0",
+    "RIG:MAX_BONE_INFLUENCES_4@1.0.0",
+    "OPT:MESH_POLICY_NO_SLIVERS@1.0.0",
+    "DIR:SILHOUETTE_READABLE_10_20M@1.0.0"
+  ],
+  "procedures": [
+    "model_hardsurface_v1@1.0.0",
+    "uv_standard_trim_v1@1.0.0",
+    "bake_hardsurface_cage_v1@1.0.0",
+    "texturing_pbr_pack_orm_v1@1.0.0",
+    "optimization_lod_plan_v1@1.0.0",
+    "export_fbx_modern_engines_v1@1.0.0"
+  ],
+  "checklists": [
+    "before_export@1.0.0",
+    "after_import@1.0.0"
+  ],
+  "meta": {
+    "kb_version": "1.0",
+    "generated_at_utc": "2025-11-23T17:20:00Z",
+    "scope": "Real-time game art; Blender planning; export to modern engines + Roblox Studio",
+    "provenance": [
+      {
+        "url": "/mnt/data/unknown-unknowns-2025.md",
+        "title": "Unknown Unknowns 2025"
+      },
+      {
+        "url": "/mnt/data/paas-validation-principles.md",
+        "title": "PaaS Validation Principles"
+      }
+    ]
+  }
+}

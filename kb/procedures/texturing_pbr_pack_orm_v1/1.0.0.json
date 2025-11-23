@@ -1,0 +1,24 @@
+{
+  "id": "texturing_pbr_pack_orm_v1",
+  "phase": "texture",
+  "steps": [
+    "Author Basecolor/Metallic/Roughness/Normal/AO within engine-safe ranges.",
+    "Channel-pack ORM when applicable to reduce texture count.",
+    "Keep roughness readable; avoid crushed blacks; prefer tiling mats on large areas."
+  ],
+  "metrics": [
+    {
+      "name": "texture_sets",
+      "unit": "count",
+      "target": 3
+    }
+  ],
+  "DoD": "§TEX:SIZE_RANGE",
+  "sources": [
+    {
+      "url": "https://arxiv.org/html/2407.02445v1",
+      "title": "Meta 3D AssetGen"
+    }
+  ],
+  "version": "1.0.0"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "uv_standard_trim_v1",
+  "phase": "uv",
+  "steps": [
+    "Mark seams on least-visible edges; split by shading discontinuities.",
+    "Pack islands with ≥ 4 px padding @1k; scale to keep TD within ±10%.",
+    "Mirror/overlap only on symmetrical, wear-agnostic areas; unique UVs for decals/hero wear."
+  ],
+  "metrics": [
+    {
+      "name": "texel_density_variance",
+      "unit": "percent",
+      "target": 10
+    }
+  ],
+  "DoD": "§UV:TD_VARIANCE_MAX_10PCT",
+  "sources": [
+    {
+      "url": "http://arxiv.org/pdf/2404.13923.pdf",
+      "title": "MaterialSeg3D"
+    }
+  ],
+  "version": "1.0.0"
+}

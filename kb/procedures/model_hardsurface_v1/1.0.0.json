@@ -1,0 +1,29 @@
+{
+  "id": "model_hardsurface_v1",
+  "phase": "model",
+  "steps": [
+    "Blockout with primary forms to establish silhouette clarity (10–20 m test).",
+    "Apply Mirror/Array/Bevel modifiers non-destructively; keep quads-first with controlled poles.",
+    "Reserve micro-geometry; plan bevels for bake rather than runtime geo.",
+    "Prepare low-poly topology for clean shading; mark hard edges where needed."
+  ],
+  "metrics": [
+    {
+      "name": "triangles_estimate",
+      "unit": "tris",
+      "target": 8000
+    }
+  ],
+  "DoD": "§LOD:PRESENT_HIGH_MED_LOW",
+  "sources": [
+    {
+      "url": "https://joss.theoj.org/papers/10.21105/joss.04901.pdf",
+      "title": "BlenderProc2"
+    },
+    {
+      "url": "/mnt/data/paas-validation-principles.md",
+      "title": "PaaS Validation Principles"
+    }
+  ],
+  "version": "1.0.0"
+}

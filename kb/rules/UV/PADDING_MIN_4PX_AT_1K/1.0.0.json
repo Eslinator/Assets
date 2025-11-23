@@ -1,0 +1,18 @@
+{
+  "rule_ref": "UV:PADDING_MIN_4PX_AT_1K",
+  "category": "uv",
+  "statement": "Island padding must be ≥ 4 px at 1024 resolution (scale proportionally).",
+  "units": "px@1k",
+  "range": {
+    "min": 4,
+    "max": null
+  },
+  "severity": "warn",
+  "sources": [
+    {
+      "url": "http://arxiv.org/pdf/2404.13923.pdf",
+      "title": "MaterialSeg3D"
+    }
+  ],
+  "version": "1.0.0"
+}
