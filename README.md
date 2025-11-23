@@ -7,3 +7,7 @@
 - Provenance (local files): 
   - /mnt/data/unknown-unknowns-2025.md
   - /mnt/data/paas-validation-principles.md
+
+## Live KB
+[![Publish KB (Pages)](https://github.com/Eslinator/Assets/actions/workflows/pages.yml/badge.svg)](https://github.com/Eslinator/Assets/actions/workflows/pages.yml)
+**Live:** https://eslinator.github.io/Assets
