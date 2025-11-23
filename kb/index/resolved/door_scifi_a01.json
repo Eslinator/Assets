@@ -1,0 +1,342 @@
+{
+  "resolved_at": "2025-11-23T17:14:40.667340Z",
+  "asset_spec": {
+    "path": "/Users/jasonesler/kb-mesh/kb/assets/door_scifi_a01/1.0.0.json",
+    "data": {
+      "type": "asset_spec",
+      "version": "1.0.0",
+      "asset_id": "door_scifi_a01",
+      "purpose": "level entrance",
+      "hero_tier": "background",
+      "target_engine": [
+        "Roblox",
+        "Unreal"
+      ],
+      "budgets": {
+        "tris_max": 8000,
+        "textures": [
+          {
+            "map": "ORM",
+            "size_px": 1024
+          },
+          {
+            "map": "Normal",
+            "size_px": 1024
+          },
+          {
+            "map": "BaseColor",
+            "size_px": 1024
+          }
+        ]
+      },
+      "lod_plan": [
+        {
+          "name": "HIGH"
+        },
+        {
+          "name": "MED"
+        },
+        {
+          "name": "LOW"
+        }
+      ],
+      "constraints": [
+        {
+          "rule_ref": "OPT:ROBLOX:MESHPART_TRIS_MAX",
+          "severity": "blocker"
+        },
+        {
+          "rule_ref": "EXPORT:AXIS:NEG_Z_FWD_Y_UP",
+          "severity": "blocker"
+        },
+        {
+          "rule_ref": "LOD:PRESENT_HIGH_MED_LOW",
+          "severity": "blocker"
+        }
+      ],
+      "scale_units": {
+        "m_per_unit": 1.0,
+        "roblox_stud_per_m": 3.571
+      },
+      "sources": [
+        {
+          "url": "/mnt/data/unknown-unknowns-2025.md",
+          "title": "Unknown Unknowns 2025"
+        },
+        {
+          "url": "/mnt/data/paas-validation-principles.md",
+          "title": "PaaS Validation Principles"
+        }
+      ]
+    }
+  },
+  "rules": [
+    {
+      "path": "/Users/jasonesler/kb-mesh/kb/rules/OPT/ROBLOX/MESHPART_TRIS_MAX/1.0.0.json",
+      "data": {
+        "rule_ref": "OPT:ROBLOX:MESHPART_TRIS_MAX",
+        "category": "roblox",
+        "statement": "Each MeshPart must have ≤ 10,000 triangles.",
+        "units": "tris",
+        "range": {
+          "min": 0,
+          "max": 10000
+        },
+        "severity": "blocker",
+        "sources": [
+          {
+            "url": "https://create.roblox.com/docs",
+            "title": "Roblox DevHub"
+          },
+          {
+            "url": "/mnt/data/unknown-unknowns-2025.md",
+            "title": "Unknown Unknowns 2025"
+          }
+        ],
+        "version": "1.0.0"
+      }
+    },
+    {
+      "path": "/Users/jasonesler/kb-mesh/kb/rules/EXPORT/AXIS/NEG_Z_FWD_Y_UP/1.0.0.json",
+      "data": {
+        "rule_ref": "EXPORT:AXIS:NEG_Z_FWD_Y_UP",
+        "category": "export",
+        "statement": "Export with -Z forward and Y up.",
+        "units": "axes",
+        "severity": "blocker",
+        "sources": [
+          {
+            "url": "https://create.roblox.com/docs",
+            "title": "Roblox DevHub"
+          },
+          {
+            "url": "/mnt/data/paas-validation-principles.md",
+            "title": "PaaS Validation Principles"
+          }
+        ],
+        "version": "1.0.0"
+      }
+    },
+    {
+      "path": "/Users/jasonesler/kb-mesh/kb/rules/LOD/PRESENT_HIGH_MED_LOW/1.0.0.json",
+      "data": {
+        "rule_ref": "LOD:PRESENT_HIGH_MED_LOW",
+        "category": "performance",
+        "statement": "Provide at least three LODs: HIGH, MED, LOW; remove tertiary then secondary detail first.",
+        "units": "levels",
+        "range": {
+          "min": 3,
+          "max": 4
+        },
+        "severity": "blocker",
+        "sources": [
+          {
+            "url": "https://create.roblox.com/docs",
+            "title": "Roblox DevHub"
+          }
+        ],
+        "version": "1.0.0"
+      }
+    }
+  ],
+  "procedures": [
+    {
+      "path": "/Users/jasonesler/kb-mesh/kb/procedures/optimization_lod_plan_v1/1.0.0.json",
+      "data": {
+        "id": "optimization_lod_plan_v1",
+        "phase": "qa",
+        "steps": [
+          "Define HIGH/MED/LOW meshes; remove tertiary then secondary details per step-down.",
+          "Verify decal removal thresholds and screen-size targets.",
+          "Confirm collision uses simple primitives or engine-native low-poly shapes."
+        ],
+        "metrics": [
+          {
+            "name": "lod_levels",
+            "unit": "count",
+            "target": 3
+          }
+        ],
+        "DoD": "§LOD:PRESENT_HIGH_MED_LOW",
+        "sources": [
+          {
+            "url": "https://create.roblox.com/docs",
+            "title": "Roblox DevHub"
+          }
+        ],
+        "version": "1.0.0"
+      }
+    },
+    {
+      "path": "/Users/jasonesler/kb-mesh/kb/procedures/uv_standard_trim_v1/1.0.0.json",
+      "data": {
+        "id": "uv_standard_trim_v1",
+        "phase": "uv",
+        "steps": [
+          "Mark seams on least-visible edges; split by shading discontinuities.",
+          "Pack islands with ≥ 4 px padding @1k; scale to keep TD within ±10%.",
+          "Mirror/overlap only on symmetrical, wear-agnostic areas; unique UVs for decals/hero wear."
+        ],
+        "metrics": [
+          {
+            "name": "texel_density_variance",
+            "unit": "percent",
+            "target": 10
+          }
+        ],
+        "DoD": "§UV:TD_VARIANCE_MAX_10PCT",
+        "sources": [
+          {
+            "url": "http://arxiv.org/pdf/2404.13923.pdf",
+            "title": "MaterialSeg3D"
+          }
+        ],
+        "version": "1.0.0"
+      }
+    },
+    {
+      "path": "/Users/jasonesler/kb-mesh/kb/procedures/texturing_pbr_pack_orm_v1/1.0.0.json",
+      "data": {
+        "id": "texturing_pbr_pack_orm_v1",
+        "phase": "texture",
+        "steps": [
+          "Author Basecolor/Metallic/Roughness/Normal/AO within engine-safe ranges.",
+          "Channel-pack ORM when applicable to reduce texture count.",
+          "Keep roughness readable; avoid crushed blacks; prefer tiling mats on large areas."
+        ],
+        "metrics": [
+          {
+            "name": "texture_sets",
+            "unit": "count",
+            "target": 3
+          }
+        ],
+        "DoD": "§TEX:SIZE_RANGE",
+        "sources": [
+          {
+            "url": "https://arxiv.org/html/2407.02445v1",
+            "title": "Meta 3D AssetGen"
+          }
+        ],
+        "version": "1.0.0"
+      }
+    },
+    {
+      "path": "/Users/jasonesler/kb-mesh/kb/procedures/export_fbx_modern_engines_v1/1.0.0.json",
+      "data": {
+        "id": "export_fbx_modern_engines_v1",
+        "phase": "export",
+        "steps": [
+          "Apply transforms; normalize scale; set pivot/origin as planned.",
+          "FBX export: scale 1.0; smoothing/tangents per target engine; include animations only if required.",
+          "Axis check: -Z forward, Y up; verify per-material limits and mesh merging policy."
+        ],
+        "metrics": [
+          {
+            "name": "axis_compliance",
+            "unit": "boolean",
+            "target": 1
+          }
+        ],
+        "DoD": "§EXPORT:AXIS:NEG_Z_FWD_Y_UP",
+        "sources": [
+          {
+            "url": "https://create.roblox.com/docs",
+            "title": "Roblox DevHub"
+          }
+        ],
+        "version": "1.0.0"
+      }
+    },
+    {
+      "path": "/Users/jasonesler/kb-mesh/kb/procedures/model_hardsurface_v1/1.0.0.json",
+      "data": {
+        "id": "model_hardsurface_v1",
+        "phase": "model",
+        "steps": [
+          "Blockout with primary forms to establish silhouette clarity (10–20 m test).",
+          "Apply Mirror/Array/Bevel modifiers non-destructively; keep quads-first with controlled poles.",
+          "Reserve micro-geometry; plan bevels for bake rather than runtime geo.",
+          "Prepare low-poly topology for clean shading; mark hard edges where needed."
+        ],
+        "metrics": [
+          {
+            "name": "triangles_estimate",
+            "unit": "tris",
+            "target": 8000
+          }
+        ],
+        "DoD": "§LOD:PRESENT_HIGH_MED_LOW",
+        "sources": [
+          {
+            "url": "https://joss.theoj.org/papers/10.21105/joss.04901.pdf",
+            "title": "BlenderProc2"
+          },
+          {
+            "url": "/mnt/data/paas-validation-principles.md",
+            "title": "PaaS Validation Principles"
+          }
+        ],
+        "version": "1.0.0"
+      }
+    },
+    {
+      "path": "/Users/jasonesler/kb-mesh/kb/procedures/bake_hardsurface_cage_v1/1.0.0.json",
+      "data": {
+        "id": "bake_hardsurface_cage_v1",
+        "phase": "bake",
+        "steps": [
+          "Name high/low meshes with clear suffixes for batch bakes.",
+          "Generate an outward cage for tight bevels; avoid projection skew on glancing angles.",
+          "Bake Normal, AO, Curvature; add Thickness where material needs it."
+        ],
+        "metrics": [
+          {
+            "name": "projection_errors",
+            "unit": "count",
+            "target": 0
+          }
+        ],
+        "DoD": "§EXPORT:AXIS:NEG_Z_FWD_Y_UP",
+        "sources": [
+          {
+            "url": "https://www.tandfonline.com/doi/full/10.1080/17453054.2017.1313682",
+            "title": "High poly to low poly workflows"
+          }
+        ],
+        "version": "1.0.0"
+      }
+    }
+  ],
+  "checklists": [
+    {
+      "path": "/Users/jasonesler/kb-mesh/kb/checklists/after_import/1.0.0.json",
+      "data": {
+        "stage": "after_import",
+        "version": "1.0.0",
+        "items": [
+          "Tri count matches plan; shading and tangents correct.",
+          "Scale & units correct (1 unit = 1 m unless engine overrides; Roblox mapping documented).",
+          "LOD switching thresholds verified at screen distances.",
+          "Collision behaves as intended with simple primitives.",
+          "No runtime MeshId swaps on server for Roblox templates."
+        ]
+      }
+    },
+    {
+      "path": "/Users/jasonesler/kb-mesh/kb/checklists/before_export/1.0.0.json",
+      "data": {
+        "stage": "before_export",
+        "version": "1.0.0",
+        "items": [
+          "Tri count ≤ budget; MeshPart ≤ 10,000 tris.",
+          "HIGH/MED/LOW LODs present and linked.",
+          "Transforms applied; scale normalized; pivot/origin correct.",
+          "UVs valid; no unintended overlaps; TD within ±10%; padding ≥ 4 px @1k.",
+          "Materials limited; channel packing (ORM) applied when planned.",
+          "Axis: −Z forward, Y up; naming & hierarchy clean."
+        ]
+      }
+    }
+  ]
+}
